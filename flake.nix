@@ -615,5 +615,6 @@
       url = "github:nvim-neotest/nvim-nio";
       flake = false;
     };
+    sg-nvim.url = "github:sourcegraph/sg.nvim";
   };
 }

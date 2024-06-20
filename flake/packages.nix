@@ -24,6 +24,7 @@
       # Exposed neovim configurations
       nix = config.legacyPackages.neovim-nix;
       maximal = config.legacyPackages.neovim-maximal;
+      ld = config.legacyPackages.neovim-ld;
       default = config.legacyPackages.neovim-nix;
 
       # Published docker images

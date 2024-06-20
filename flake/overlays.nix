@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  inherit (import ../configuration.nix inputs) neovimConfiguration mainConfig;
+  inherit (import ../configuration.nix inputs) neovimConfiguration mainConfig ldConfig;
 
   buildPkg = pkgs: modules: (neovimConfiguration {inherit pkgs modules;}).neovim;
 
@@ -14,6 +14,7 @@ in {
     inherit neovimConfiguration;
     neovim-nix = buildPkg prev [nixConfig];
     neovim-maximal = buildPkg prev [maximalConfig];
+    neovim-ld = buildPkg prev [ldConfig];
     devPkg = buildPkg pkgs [nixConfig {config.vim.languages.html.enable = pkgs.lib.mkForce true;}];
   };
 }
